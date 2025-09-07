@@ -1,0 +1,299 @@
+/* ========== Reset básico ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== Header y navegación ========== */
+header {
+  background-color: #1f2937;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #60a5fa;
+}
+
+/* ===== Menú hamburguesa ===== */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1f2937;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+  }
+
+  header nav ul.active {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
+
+/* ========== Sección: About Me ========== */
+#about-me {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#about-me h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#about-me p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* ========== Sección: Proyectos ========== */
+#projects {
+  background-color: #fff;
+  padding: 3rem 2rem;
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#projects .filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#projects .filters button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#projects .filters button:hover {
+  background: #1e40af;
+}
+
+#projects article {
+  background: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#projects figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== Lightbox ===== */
+#lightbox {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========== Sección: Skills ========== */
+#skills {
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#skills ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#skills li {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+#skills li::before {
+  content: "✔";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* ========== Sección: Contacto ========== */
+#contact {
+  padding: 3rem 2rem;
+  background-color: #fff;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+#contact input,
+#contact textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#contact button {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #1e40af;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f2937;
+  color: #fff;
+}
+
+/* ========== Responsividad ========== */
+@media (max-width: 768px) {
+  #projects article {
+    max-width: 100%;
+  }
+
+  #skills ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills ul {
+    grid-template-columns: 1fr;
+  }
+}

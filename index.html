@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio de desarrollo web de [Tu Nombre], mostrando proyectos, habilidades y formas de contacto."
+    />
+    <title>Portafolio | Tu Nombre</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header con navegación -->
+    <header>
+      <button id="menu-toggle" aria-label="Abrir menú">☰</button>
+      <nav role="navigation" aria-label="Menú principal">
+        <ul>
+          <li><a href="#about-me">Sobre mí</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Sección sobre mí -->
+    <section id="about-me">
+      <h2>Sobre mí</h2>
+      <p>
+        Hola, soy <strong>Cristhian</strong>, desarrollador web con pasión por
+        crear aplicaciones accesibles, rápidas y fáciles de usar.
+      </p>
+    </section>
+
+    <!-- Sección de proyectos -->
+    <section id="projects">
+      <h2>Proyectos</h2>
+
+      <!-- Botones de filtro -->
+      <div class="filters">
+        <button data-filter="all">Todos</button>
+        <button data-filter="web">Web</button>
+        <button data-filter="mobile">Móvil</button>
+      </div>
+
+      <article data-category="web">
+        <h3>Proyecto 1</h3>
+        <figure>
+          <img
+            src="images/proyecto1.png"
+            alt="Captura de pantalla del Proyecto 1"
+          />
+          <figcaption>Descripción breve del Proyecto 1.</figcaption>
+        </figure>
+        <p>
+          Este proyecto muestra mis habilidades en HTML, CSS y JavaScript,
+          implementando una aplicación web responsiva.
+        </p>
+      </article>
+
+      <article data-category="mobile">
+        <h3>Proyecto 2</h3>
+        <figure>
+          <img
+            src="images/proyecto2.png"
+            alt="Vista previa del Proyecto 2 en escritorio y móvil"
+          />
+          <figcaption>Aplicación responsiva y accesible.</figcaption>
+        </figure>
+        <p>
+          Una aplicación moderna construida con React y Node.js para gestionar
+          tareas colaborativas.
+        </p>
+      </article>
+    </section>
+
+    <!-- Sección de habilidades -->
+    <section id="skills">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>HTML5, CSS3, JavaScript (ES6+)</li>
+        <li>React, Node.js</li>
+        <li>Git y GitHub</li>
+        <li>Accesibilidad web (WCAG, ARIA)</li>
+        <li>SEO técnico</li>
+      </ul>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contact">
+      <h2>Contacto</h2>
+      <form action="#" method="POST">
+        <div>
+          <label for="name">Nombre:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div>
+          <label for="email">Correo electrónico:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div>
+          <label for="message">Mensaje:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Cristhian. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
